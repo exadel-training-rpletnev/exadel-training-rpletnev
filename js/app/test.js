@@ -33,12 +33,12 @@ function displayTest(testID)
 
 function displayQuestion(questionID)
 {
-    document.getElementById(currentQuestion).className = "questionButton";
+    document.getElementById(currentQuestion).classList.remove("questionButtonSelected");
     currentQuestion = questionID;
-    document.getElementById(questionID).className = "questionButton questionButtonSelected";
+    document.getElementById(questionID).classList.add("questionButtonSelected");
     var question = tests[currentTest].questions[currentQuestion];
     var testQuestion = document.getElementById("testQuestion");
-    testQuestion.innerHTML = question.question;
+    testQuestion.innerHTML = question.question + "   (right: " + question.right + ")";
 
     var img = document.getElementById("testImg");
     img.src = question.questionImg;
@@ -56,7 +56,7 @@ function displayQuestion(questionID)
         radio.type = "radio";
         radio.name = "group1";
         radio.value = i;
-        radio.id = i;
+        radio.id = "r" + i;
         var label = document.createElement("label");
         label.htmlFor = radio.id;
         label.className = "radio";
@@ -65,6 +65,8 @@ function displayQuestion(questionID)
         answers.appendChild(label);
         answers.appendChild(document.createElement("br"));
     }
+
+    var qButton = document.getElementById("b" + questionID);
 }
 
 function switchMode(mode)
@@ -81,11 +83,28 @@ function switchMode(mode)
     }
 }
 
+function displayTestsList()
+{
+    var testDiv = document.getElementById("testDiv");
+    while (testDiv.firstChild) {
+        testDiv.removeChild(testDiv.firstChild);
+    }
+
+    for (var i=0; i<tests.length; i++) {
+        var link = document.createElement("a");
+        link.href = "?test=" + (i + 1) + "&question=1";
+        link.className = "testButton";
+        link.innerHTML = "<p>" + tests[i].title + "</p>";
+        testDiv.appendChild(link);
+    }
+}
+
 function displayDefaultPage()
 {
-    displayTest(0);
-    displayQuestion(0);
-    //switchMode("selection");
+    //displayTest(0);
+    //displayQuestion(0);
+    switchMode("selection");
+    displayTestsList();
 }
 
 function getQueryVariable(variable)

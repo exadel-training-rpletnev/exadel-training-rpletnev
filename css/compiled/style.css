@@ -1,0 +1,105 @@
+body {
+    font-family: Trebuchet MS, sans-serif;
+    font-size: 12pt;
+    background-color: #F2F2F2;
+    color: #040404;
+}
+
+div.pageDiv {
+    text-align: justify;
+    margin-left: 5%;
+    margin-right: 5%;
+    min-height: 95vh;
+    padding-left: 10px;
+    border: solid 1px #808080;
+    border-radius: 10px;
+    /*box-shadow: 10px ?test=1&question=410px 5px #888888;*/
+    background-color: #FEFEFE;
+    color: #040404;
+}
+
+div.hiddenDiv
+{
+    display: none;
+}
+
+h1 {
+    font-size: 12pt;
+    font-weight: lighter;
+    padding-left: 20px;
+}
+
+#chapterTitle {
+    font-size: 12pt;
+    color: #A1A1A1;
+}
+
+#chapterDescription {
+    font-size: 11pt;
+    color: #A1A1A1;
+}
+
+#questionButtons {
+    padding-left: 10px;
+}
+
+hr {
+    width: 60%;
+    size: 1px;
+    color: #CCCCCC;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+p {
+    padding-left: 20px;
+}
+
+img {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+img.noImage {
+    display: none;
+}
+
+#testAnswers {
+    margin-left: 40px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+label {
+    /*font-family: Verdana, sans-serif;*/
+    font-size: 11pt;
+    font-weight: lighter;
+    color: #000000;
+}
+
+a.questionButton {
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    background-color: #C2C2C2;
+    padding: 9px;
+    text-decoration: none;
+    user-select: none;
+    display: inline-block;
+    width: 18px;
+}
+
+a.questionButtonPassed {
+    background-color: #40A0FF;
+}
+
+a.questionButtonSelected {
+    background-color: #80C0FF;
+}
+
+a.questionButton:hover {
+    background-color: #EDEDED;
+}
+
